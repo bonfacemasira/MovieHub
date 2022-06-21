@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/* Footer Section */
+div#footer{
+    background-color: aqua;
+    height: 4rem;
+    width: 100%;
+    border: 2px solid black;
+}
+
+div#footer > div#footerHolder {
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    margin: auto;
+}
+
+div#footer > div#footerHolder > p {
+    justify-content: center;
+    text-align: center;
+}

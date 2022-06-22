@@ -1,10 +1,9 @@
-# Bonface Masira Portfolio
+# MovieHub
  ## By Bonface Masira
 ## Screenshot
  ![image](./assets/images/Capture.JPG)
 
  ## Table of Content
- - [Design](#design)
  - [Description](#description)
  - [Features](#features)
  - [Behaviour Driven Development](#Behaviour-Driven-Development)
@@ -14,9 +13,6 @@
  - [Technology  Used](#technology-Used)
  - [Licence](#licence)
  - [Authors Info](#Authors-Info)
-## Design
-
-Figma Design - [Portfolio - Bonface Masira](https://www.figma.com/file/q4riPMOuzfayY4o2wOLmLp/Bonface-Masira---Personal-Portfolio?node-id=0%3A1)
 
  ## Description
 

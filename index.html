@@ -7,14 +7,33 @@
     <title>MovieHub</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <!-- Main section -->
     <div id="container">
         <!-- Header section -->
-        <div id="nav"></div>
+        <div id="title">
+            <div id="content">
+                <a href=""><h1>MovieHub</h1></a>
+            </div>
+        </div>
         <!-- Main content section -->
-        <div id="main"></div>
+        <div id="main">
+            <div id="content">
+                <form class="search" action="">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+                <div class="movieContainer">
+                    <div class="movieList">
+                        <div class="moviesRoller">
+                            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- Page footer -->
     <div id="footer">

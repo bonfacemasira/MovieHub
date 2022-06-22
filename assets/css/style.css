@@ -4,12 +4,69 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
+/* Container - Main Section */
+body{
+    background-image: url('../images/stage-233084.jpg');
+    background-color: red;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+div#container{
+    width: 80%;
+    min-height: 80%;
+    margin: auto;
+}
+
+div#container> #title >#content > a{
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 4rem;
+    color: white;
+}
+
+#container > #main {
+    width: 100%;
+    height: 100vh;
+}
+
+form.search{
+    margin-top: 0.5rem;
+}
+
+form.search > input[type=text] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid grey;
+    float: left;
+    width: 70%;
+    background: #f1f1f1;
+  }
+  
+  form.search > button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 1rem;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+  }
+
+
+
 /* Footer Section */
 div#footer{
+    margin-top: 0.5rem;
     background-color: aqua;
-    height: 4rem;
+    line-height: 3rem;
     width: 100%;
-    border: 2px solid black;
+    /* bottom: 0%; */
+    position: absolute;
 }
 
 div#footer > div#footerHolder {

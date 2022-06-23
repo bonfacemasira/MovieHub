@@ -5,13 +5,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     //create elements
 
-
     // function createMovieElements() {
     //     movieContainer.innerHTML = `
     //     <div class="column">
     //         <div class="card">
     //             <div class="posterHolder">
-    //                 <img src=""/>
+    //                 <img src=`https://image.tmdb.org/t/p/w1280${x.poster_path}`/>
     //             </div>
     //         </div>
     //         <div class="description">
@@ -38,6 +37,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
         let moviePoster = document.createElement('img');
         moviePoster.src = `https://image.tmdb.org/t/p/w1280${x.poster_path}`;
+        moviePoster.style.width = "100%";
+        moviePoster.style.height = "100%";
+        
         posterHolder.appendChild(moviePoster);
 
         let description = document.createElement('div');
@@ -46,10 +48,28 @@ document.addEventListener('DOMContentLoaded', ()=>{
     
         let text = document.createElement('div');
         text.className= "text"
-        text.innerHTML = `<h5>${x.original_title}</h5> <div class="card-panel" style="background:#810000;color:white;"> ${(x.vote_average)} <span id=stars>${getStars(x.vote_average)}</span> </div>`
+        text.style.backgroundColor = "white";
+        text.innerHTML = `<h5>${x.original_title}</h5> <div class="card-panel" style="background:#810000;color:white;"> ${(x.vote_average)} <span id=stars>${ratingStars(x.vote_average)}</span> </div>`
         description.appendChild(text);
 
         movieContainer.appendChild(column);
+    }
+
+    // Get rating stars
+    let ratingStars = (rating) =>{
+        rating = Math.round(rating * 2) / 2;
+        new_rating = (rating/10)*5;
+        let output = [];
+
+        for (i = new_rating; i >= 1; i--)
+        output.push('<i class="fa fa-star" aria-hidden="true" style="color: gold;"></i>&nbsp;');
+
+        if (i == .5) output.push('<i class="fa fa-star-half-o" aria-hidden="true" style="color: gold;"></i>&nbsp;');
+
+        for (let i = (5 - new_rating); i >= 1; i--)
+        output.push('<i class="fa fa-star-o" aria-hidden="true" style="color: gold;"></i>&nbsp;');
+
+        return output.join('');
     }
 
 
@@ -64,6 +84,4 @@ document.addEventListener('DOMContentLoaded', ()=>{
         })
     }
     fetchMovies()
-
-
 })

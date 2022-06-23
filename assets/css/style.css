@@ -19,7 +19,7 @@ div#container{
     margin: auto;
 }
 
-div#container> #title >#content > a{
+div#container> #title >#name > a{
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -29,7 +29,7 @@ div#container> #title >#content > a{
 
 #container > #main {
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 form.search{
@@ -57,7 +57,38 @@ form.search > input[type=text] {
     cursor: pointer;
   }
 
+  .column{
+    width: 30%;
+    padding: 1%;
+    border: none;
+    border-radius: 10px;
+}
 
+  .card{
+    height: 85%;
+  }
+
+  .posterHolder{
+    height: 100%;
+    width: 100%;
+  }
+
+  .description{
+    height: 10%;
+  }
+
+  .text{
+    height: 100%;
+    padding: 10px 5px;
+  }
+
+  #movieContainer{
+    width: 100%;
+    padding-top: 1rem;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
 /* Footer Section */
 div#footer{

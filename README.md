@@ -1,7 +1,7 @@
 # MovieHub
  ## By Bonface Masira
 ## Screenshot
- ![image](./assets/images/Capture.JPG)
+ ![image](./assets/images/screenshot.JPG)
 
  ## Table of Content
  - [Description](#description)

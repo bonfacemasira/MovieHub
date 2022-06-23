@@ -2,27 +2,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const input = document.getElementById('search');
     const button = document.getElementById('button');
     const movieContainer = document.getElementById('movieContainer');
+    const inputForm = document.querySelector('form');
 
     //create elements
-
-    // function createMovieElements() {
-    //     movieContainer.innerHTML = `
-    //     <div class="column">
-    //         <div class="card">
-    //             <div class="posterHolder">
-    //                 <img src=`https://image.tmdb.org/t/p/w1280${x.poster_path}`/>
-    //             </div>
-    //         </div>
-    //         <div class="description">
-    //             <h5 class="text">
-    //             </h5>
-    //         </div>
-    //     </div>
-    //     `
-    // }
-
-    // createMovieElements();
-
     const createElements = (x) =>{
         let column = document.createElement('div');
         column.className = 'column';
@@ -99,7 +81,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }
 
     //search by enter key
-    input.addEventListener("keyup", function(event) {
-         searchMovies();
-      });
+    inputForm.addEventListener('submit', (event)=>{
+        event.preventDefault();
+        searchMovies()
+    })
+    
 })

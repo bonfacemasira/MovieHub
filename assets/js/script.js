@@ -72,7 +72,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
         return output.join('');
     }
 
-
     // Fetch movies from the api
     let fetchMovies =()=>{
         fetch(`https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=8d07a996f1bf5f9cee356b413d8fa485`)
@@ -83,5 +82,24 @@ document.addEventListener('DOMContentLoaded', ()=>{
             });
         })
     }
-    fetchMovies()
+    fetchMovies();
+
+
+    // search for a movie on the page
+    const searchMovies =()=>{
+        let value = input.value;
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=8d07a996f1bf5f9cee356b413d8fa485&query="${value}`)
+        .then((resp) => resp.json())
+        .then(movies=>{
+            movieContainer.innerHTML="";
+            movies.results.forEach(element => {
+                createElements(element)
+            });
+        })
+    }
+
+    //search by enter key
+    input.addEventListener("keyup", function(event) {
+         searchMovies();
+      });
 })

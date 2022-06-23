@@ -55,4 +55,4 @@ As a user of the application, you will be able to :
 
 ## Authors Info
 Slack Profile - [Bonface Masira](https://app.slack.com/client/T0101L740P4/C010E0J8BRA/user_profile/U03DNHF0QKA)
-Linked - [Bonface Masira](https://www.linkedin.com/in/bonface-masira-975447a4)
+LinkedIn - [Bonface Masira](https://www.linkedin.com/in/bonface-masira-975447a4)

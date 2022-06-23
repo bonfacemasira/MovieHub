@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         card.appendChild(posterHolder);
 
         let moviePoster = document.createElement('img');
-        //moviePoster.src = `https://image.tmdb.org/t/p/w1280${x.poster_path}`;
+        moviePoster.src = `https://image.tmdb.org/t/p/w1280${x.poster_path}`;
         posterHolder.appendChild(moviePoster);
 
         let description = document.createElement('div');
@@ -46,17 +46,24 @@ document.addEventListener('DOMContentLoaded', ()=>{
     
         let text = document.createElement('div');
         text.className= "text"
-        //text.innerHTML = `<h5>${x.original_title}</h5> <div class="card-panel" style="background:#810000;color:white;"> ${(x.vote_average)} <span id=stars>${getStars(x.vote_average)}</span> </div>`
+        text.innerHTML = `<h5>${x.original_title}</h5> <div class="card-panel" style="background:#810000;color:white;"> ${(x.vote_average)} <span id=stars>${getStars(x.vote_average)}</span> </div>`
         description.appendChild(text);
 
         movieContainer.appendChild(column);
-        console.log(movieContainer)
     }
-    createElements();
 
-    function fetchMoviees() {
-        fetch(`https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=8d07a996f1bf5f9cee356b413d8fa485&page=${Math.floor(Math.random() * 100) + 1}`)
+
+    // Fetch movies from the api
+    let fetchMovies =()=>{
+        fetch(`https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=8d07a996f1bf5f9cee356b413d8fa485`)
+        .then((resp) => resp.json())
+        .then(data => {
+            data.results.forEach(element => {
+                createElements(element)
+            });
+        })
     }
+    fetchMovies()
 
 
 })

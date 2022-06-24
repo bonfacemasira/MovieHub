@@ -30,9 +30,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
     
         let text = document.createElement('div');
         text.className= "text"
-        text.style.backgroundColor = "white";
         text.innerHTML = `<h5>${x.original_title}</h5> <div class="card-panel" style="background:#810000;color:white;"> ${(x.vote_average)} <span id=stars>${ratingStars(x.vote_average)}</span> </div>`
         description.appendChild(text);
+
+        let overview =document.createElement('div');
+        overview.className = "overview";
+        overview.innerHTML = `${x.overview}`;
+        column.appendChild(overview)
+
 
         movieContainer.appendChild(column);
     }
@@ -56,7 +61,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     // Fetch movies from the api
     let fetchMovies =()=>{
-        fetch(`https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=8d07a996f1bf5f9cee356b413d8fa485`)
+        fetch(`https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=8d07a996f1bf5f9cee356b413d8fa485&page=${Math.floor(Math.random() * 100) + 1}`)
         .then((resp) => resp.json())
         .then(data => {
             data.results.forEach(element => {
@@ -68,9 +73,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 
     // search for a movie on the page
-    const searchMovies =()=>{
-        let value = input.value;
-        fetch(`https://api.themoviedb.org/3/search/movie?api_key=8d07a996f1bf5f9cee356b413d8fa485&query="${value}`)
+    const searchMovies = () =>{
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=8d07a996f1bf5f9cee356b413d8fa485&query="${input.value}`)
         .then((resp) => resp.json())
         .then(movies=>{
             movieContainer.innerHTML="";
@@ -80,10 +84,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
         })
     }
 
-    //search by enter key
+    button.addEventListener('submit', (event)=>{
+        searchMovies();
+    })
+
     inputForm.addEventListener('submit', (event)=>{
         event.preventDefault();
-        searchMovies()
+        searchMovies();
     })
-    
 })

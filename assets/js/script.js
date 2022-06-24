@@ -35,9 +35,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
         let overview =document.createElement('div');
         overview.className = "overview";
-        overview.innerHTML = `${x.overview}`;
+        overview.innerHTML = `<p>${x.overview}</p>`;
         column.appendChild(overview)
-
 
         movieContainer.appendChild(column);
     }

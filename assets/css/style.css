@@ -61,7 +61,6 @@ form.search > input[type=text] {
     width: 30%;
     margin: 0.5%;
     border: none;
-    border-radius: 10px;
 }
 
   .card{
@@ -80,6 +79,7 @@ form.search > input[type=text] {
   .text{
     height: 100%;
     padding: 10px 5px;
+    background-color: white;
   }
 
   #movieContainer{
@@ -90,20 +90,31 @@ form.search > input[type=text] {
     justify-content: center;
   }
 
+
+  .overview{
+    display: none;
+  }
+
+/* display moview overview */
+.column:hover > .overview{
+    display: block;
+}
+
+
 /* Footer Section */
 div#footer{
     margin-top: 0.5rem;
     background-color: aqua;
     line-height: 3rem;
     width: 100%;
-    /* bottom: 0%; */
+    margin-bottom: 0;
     position: absolute;
 }
 
 div#footer > div#footerHolder {
     justify-content: center;
     text-align: center;
-    width: 30%;
+    width: 40%;
     margin: auto;
 }
 

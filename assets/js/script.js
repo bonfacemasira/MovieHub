@@ -3,38 +3,39 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const button = document.getElementById('button');
     const movieContainer = document.getElementById('movieContainer');
     const inputForm = document.querySelector('form');
+    const EMPTY_HEART = '♡'
+    const FULL_HEART = '♥'
 
     //create elements
     const createElements = (x) =>{
         let column = document.createElement('div');
-        column.className = 'column';
+        column.id = 'column';
 
         let card = document.createElement('div');
-        card.className = 'card';
+        card.id = 'card';
         column.appendChild(card);
 
         let posterHolder = document.createElement('div');
-        posterHolder.className = 'posterHolder';
+        posterHolder.id = 'posterHolder';
         card.appendChild(posterHolder);
 
         let moviePoster = document.createElement('img');
         moviePoster.src = `https://image.tmdb.org/t/p/w1280${x.poster_path}`;
         moviePoster.style.width = "100%";
         moviePoster.style.height = "100%";
-        
         posterHolder.appendChild(moviePoster);
 
         let description = document.createElement('div');
-        description.className="description";
+        description.id="description";
         column.appendChild(description);
     
         let text = document.createElement('div');
-        text.className= "text"
+        text.id= "text"
         text.innerHTML = `<h5>${x.original_title}</h5> <div class="card-panel" style="background:#810000;color:white;"> ${(x.vote_average)} <span id=stars>${ratingStars(x.vote_average)}</span> </div>`
         description.appendChild(text);
 
         let overview =document.createElement('div');
-        overview.className = "overview";
+        overview.id = "overview";
         overview.innerHTML = `<p>${x.overview}</p>`;
         column.appendChild(overview)
 

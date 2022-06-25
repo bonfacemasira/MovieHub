@@ -26,13 +26,17 @@
                         <input type="text" placeholder="Search..." name="search" id="search">
                         <button type="submit" id="button"><i class="fa fa-search"></i></button>
                     </form>
+                    <div class="dropdown">
+                        <button class="dropBtn">Sort Results By <i class="fa fa-sort"></i></button>
+                        <div class="dropdown-content">
+                          <a href="#">Rating Descending</a>
+                          <a href="#">Release Date Descending</a>
+                        </div>
+                      </div>
                 </div>
                 <div id="movieContainer">
-                    <div id="movieList">
-                        <!-- Loading <br> -->
-                        <div id="moviesRoller">
-                            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        </div>
+                    <div id="moviesRoller">
+                        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
                     </div>
                 </div>
             </div>

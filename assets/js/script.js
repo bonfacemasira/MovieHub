@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
         let overview =document.createElement('div');
         overview.id = "overview";
-        overview.innerHTML = `<p>${x.overview}</p>`;
+        overview.innerHTML = `<p>${x.overview}</p> <hr> <br> <p>Realese Date: ${x.release_date}</p>`;
         column.appendChild(overview)
 
         movieContainer.appendChild(column);

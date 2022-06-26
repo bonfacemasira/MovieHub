@@ -3,45 +3,43 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const button = document.getElementById('button');
     const movieContainer = document.getElementById('movieContainer');
     const inputForm = document.querySelector('form');
-    const EMPTY_HEART = '♡'
-    const FULL_HEART = '♥'
 
     //create elements
     const createElements = (x) =>{
-        let column = document.createElement('div');
+        const column = document.createElement('div');
         column.id = 'column';
 
-        let card = document.createElement('div');
+        const card = document.createElement('div');
         card.id = 'card';
         column.appendChild(card);
 
-        let posterHolder = document.createElement('div');
+        const posterHolder = document.createElement('div');
         posterHolder.id = 'posterHolder';
         card.appendChild(posterHolder);
 
-        let moviePoster = document.createElement('img');
+        const moviePoster = document.createElement('img');
         moviePoster.src = `https://image.tmdb.org/t/p/w1280${x.poster_path}`;
         moviePoster.style.width = "100%";
         moviePoster.style.height = "100%";
         posterHolder.appendChild(moviePoster);
 
-        let description = document.createElement('div');
+        const description = document.createElement('div');
         description.id="description";
         column.appendChild(description);
     
-        let text = document.createElement('div');
+        const text = document.createElement('div');
         text.id= "text"
-        text.innerHTML = `<h5>${x.original_title}</h5> <div class="card-panel" style="background:#810000;color:white;"> ${(x.vote_average)} <span id=stars>${ratingStars(x.vote_average)}</span> </div>`
+        text.innerHTML = `<h5>${x.original_title}</h5> <div style="background:#810000; color:white;"> ${(x.vote_average)} <span id=stars>${ratingStars(x.vote_average)}</span> </div>`
         description.appendChild(text);
 
-        let overview =document.createElement('div');
+        const overview =document.createElement('div');
         overview.id = "overview";
         overview.innerHTML = `<p>${x.overview}</p> <hr> <br> <p>Realese Date: ${x.release_date}</p>`;
-        column.appendChild(overview)
+        column.appendChild(overview)        
 
         movieContainer.appendChild(column);
     }
-
+    
     // Get rating stars
     let ratingStars = (rating) =>{
         rating = Math.round(rating * 2) / 2;
@@ -73,7 +71,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 
     // search for a movie on the page
-    const searchMovies = () =>{
+    let searchMovies = () =>{
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=8d07a996f1bf5f9cee356b413d8fa485&query="${input.value}`)
         .then((resp) => resp.json())
         .then(movies=>{
@@ -91,5 +89,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
     inputForm.addEventListener('submit', (event)=>{
         event.preventDefault();
         searchMovies();
+    })
+
+    const sortRating = document.getElementById('sortRating')
+    const sortDate = document.getElementById('sortDate')
+    console.log(sortDate)
+
+    sortRating.addEventListener('click', function(){
+        alert("I will sort by Rating!");
+    })
+
+    sortDate.addEventListener('click', function(){
+        alert("Release Date!");
     })
 })

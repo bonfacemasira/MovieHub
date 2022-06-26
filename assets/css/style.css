@@ -8,7 +8,7 @@
 body{
     background-image: url('../images/stage-233084.jpg');
     background-color: red;
-    background-size: cover;
+    background-size: auto;
     width: 100%;
     height: 100%;
 }
@@ -34,7 +34,6 @@ div#container> #title >#name > a{
 
 #searchBar{
   width: 100%;
-  /* margin: auto; */
 }
 
 form.search{

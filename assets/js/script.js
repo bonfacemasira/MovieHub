@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         })
     }
 
-    button.addEventListener('submit', (event)=>{
+    button.addEventListener('click', (event)=>{
         searchMovies();
     })
 
@@ -91,12 +91,23 @@ document.addEventListener('DOMContentLoaded', ()=>{
         searchMovies();
     })
 
-    const sortRating = document.getElementById('sortRating')
-    const sortDate = document.getElementById('sortDate')
-    console.log(sortDate)
+    const sortRating = document.getElementById('sortRating');
+    const sortDate = document.getElementById('sortDate');
 
-    sortRating.addEventListener('click', function(){
+    sortRating.addEventListener('click', function(a, b){
         alert("I will sort by Rating!");
+        // fetchMovies();
+        // // let data = document.getElementById('column')
+        // // let dataArray = []
+        // // dataArray.push(data)
+        // // console.log(dataArray)
+        // if (Number(a.rating) > Number(b.rating)){
+        //     return 1;
+        // } else if(Number(b.rating) > Number(a.rating)){
+        //     return -1;
+        // } else {
+        //     return 0;
+        // }
     })
 
     sortDate.addEventListener('click', function(){

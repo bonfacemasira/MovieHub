@@ -2,7 +2,7 @@
  ## By Bonface Masira
 ## Screenshot
  ![image](./assets/images/screenshot.JPG)
-  ![image](./assets/images/screenshot_sort_desc.png)
+ ![image](./assets/images/screenshot_sort_desc.png)
  ![image](./assets/images/screenshot_dropdown.png)
  ![image](./assets/images/screenshot_search.JPG)
 

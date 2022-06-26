@@ -72,7 +72,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }
     fetchMovies();
 
-
     // search for a movie on the page
     let searchMovies = () =>{
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=8d07a996f1bf5f9cee356b413d8fa485&query="${input.value}`)

@@ -23,8 +23,10 @@
 
 ## Features
 As a user of the application, you will be able to :
-1. View Bonface Masira's portfolio
-2. Contact Bonface Masira using the form
+1. View movieas and shows on different pages
+2. Search movies
+3. Sort movies by rating descending
+4. Sort movies by release date descending
 
 ## Behaviour Driven Development|
 | Behaviour      | Input        | Output       |
@@ -54,7 +56,7 @@ As a user of the application, you will be able to :
 * JavaScript - which was used for adding functionality to the web page elements.
 
 ## Known Bugs
-* The result button is work in progress
+* Sort by date is not working as expected
 
 ## Authors Info
 Slack Profile - [Bonface Masira](https://app.slack.com/client/T0101L740P4/C010E0J8BRA/user_profile/U03DNHF0QKA)

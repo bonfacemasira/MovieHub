@@ -85,10 +85,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }
 
     button.addEventListener('click', (event)=>{
+        event.preventDefault();
         searchMovies();
     })
 
     inputForm.addEventListener('submit', (event)=>{
+        event.preventDefault();
+        searchMovies();
+    })
+
+    inputForm.addEventListener('change', (event)=>{
         event.preventDefault();
         searchMovies();
     })

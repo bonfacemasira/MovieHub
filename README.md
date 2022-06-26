@@ -43,7 +43,7 @@ As a user of the application, you will be able to :
  ****
 
 ### Live Link
-- Click this link to view the live application https://bonfacemasira.github.io/Portfolio-Bonface-Masira/
+- Click this link to view the live application https://bonfacemasira.github.io/MovieHub/
 
 ### Technology  Used
 * HTML - which was used to develope the structure of the web application

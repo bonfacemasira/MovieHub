@@ -62,10 +62,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
         fetch(`https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=8d07a996f1bf5f9cee356b413d8fa485&page=${Math.floor(Math.random() * 100) + 1}`)
         .then((resp) => resp.json())
         .then(data => {
-            sortMovies(data);
+            sortMoviesByRating(data);
             sortMoviesByDate(data);
             data.results.forEach(element => {
-                // console.log(element.vote_average)
                 createElements(element)
             });
         })
@@ -102,39 +101,27 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const sortRating = document.getElementById('sortRating');
     const sortDate = document.getElementById('sortDate');
 
-    function sortMovies(data) {
+    function sortMoviesByRating(data) {
     
     sortRating.addEventListener('click', () => {
         movieContainer.innerHTML= "";
+        data.results.sort(function(a, b) {
+            return (a.vote_average < b.vote_average) ? 1 : (b.vote_average < a.vote_average) ? -1 : 0
+          });
         data.results.forEach(element => {
-            data.results.sort(function(a, b) {
-                return (a.vote_average < b.vote_average) ? 1 : (b.vote_average < a.vote_average) ? -1 :
-                 (b.vote_average == a.vote_average)
-              });
               createElements(element)
-            //   console.log(element.vote_average)
         });
-        movieContainer.removeChild(movieContainer.getElementsByTagName('div')[0]);
     })
 }
 
 function sortMoviesByDate(data) {
     sortDate.addEventListener('click', () => {
         movieContainer.innerHTML= "";
-        let releaseDate;
+        data.results.sort(function(a, b) {
+            return (a.release_date < b.release_date) ? 1 : (b.release_date < a.release_date) ? -1 : 0
+          });
         data.results.forEach(element => { 
-            let serialized = JSON.stringify(element.release_date);
-            releaseDate = new Date(JSON.parse(serialized));
-            let redefinedDate = releaseDate.getTime();
-            
-            // console.log(redefinedDate)
-            data.results.sort(function(a, b) {
-                // return a.redefinedDate - b.redefinedDate
-                return (a.redefinedDate > b.redefinedDate) ? 1 : (b.redefinedDate > a.redefinedDate) ? -1 : 0
-              });
               createElements(element)
-              console.log(typeof redefinedDate)
-            // console.log(element.release_date)
         });
     })
 }
